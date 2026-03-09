@@ -64,3 +64,46 @@ transform:translateY(-120vh) scale(1);
 opacity:0;
 }
 }
+
+const items = document.querySelectorAll(".item");
+const popup = document.getElementById("popup");
+const popupContent = document.getElementById("popup-content");
+const closeBtn = document.querySelector(".close");
+const pageContent = document.querySelector(".page-content");
+
+items.forEach(item => {
+
+item.addEventListener("click", () => {
+
+popup.style.display = "flex";
+popupContent.innerHTML = "";
+
+let element = item.querySelector("img, video").cloneNode(true);
+
+if(element.tagName === "VIDEO"){
+element.controls = true;
+element.autoplay = true;
+}
+
+popupContent.appendChild(element);
+
+/* aktifkan blur */
+pageContent.classList.add("blur");
+
+});
+
+});
+
+closeBtn.onclick = () =>{
+popup.style.display = "none";
+popupContent.innerHTML="";
+pageContent.classList.remove("blur");
+}
+
+popup.onclick = (e)=>{
+if(e.target === popup){
+popup.style.display="none";
+popupContent.innerHTML="";
+pageContent.classList.remove("blur");
+}
+}
