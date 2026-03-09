@@ -109,3 +109,69 @@ transform:translateY(0px);
 filter:blur(10px);
 transition:0.4s;
 }
+
+/* BLUR BACKGROUND */
+
+.page-content.blur{
+filter:blur(14px);
+transition:0.4s ease;
+}
+
+/* POPUP OVERLAY */
+
+.popup{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+display:none;
+justify-content:center;
+align-items:center;
+background:rgba(0,0,0,0.75);
+backdrop-filter:blur(8px);
+z-index:999;
+animation:fadeIn .3s ease;
+}
+
+/* POPUP CONTENT */
+
+.popup-content{
+animation:zoomIn .3s ease;
+}
+
+.popup-content img,
+.popup-content video{
+max-width:90vw;
+max-height:80vh;
+border-radius:12px;
+}
+
+/* CLOSE BUTTON */
+
+.close{
+position:absolute;
+top:25px;
+right:40px;
+font-size:40px;
+color:white;
+cursor:pointer;
+}
+
+/* ANIMATIONS */
+
+@keyframes fadeIn{
+from{opacity:0;}
+to{opacity:1;}
+}
+
+@keyframes zoomIn{
+from{
+transform:scale(0.8);
+opacity:0;
+}
+to{
+transform:scale(1);
+opacity:1;
+}
+}
