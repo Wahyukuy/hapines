@@ -104,3 +104,8 @@ transform:translateY(-10px);
 transform:translateY(0px);
 }
 }
+
+.page-content.blur{
+filter:blur(10px);
+transition:0.4s;
+}
